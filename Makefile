@@ -1,7 +1,7 @@
 # Makefile for Mongo Adapter
 include .env
 export
-NAME=gitlab.faza.io/go-framework/mongoadapter
+NAME=github.com/farzandalaee/mongoadapter
 GOCMD=go
 GOBUILD=$(GOCMD) build
 GORUN=$(GOCMD) run
@@ -21,7 +21,7 @@ test-full:
 	@printf "\n================="
 	@printf "\nTEST STARTS"
 	@printf "\n=================\n"
-	GOPRIVATE=*.faza.io $(GOTEST) $(NAME)
+	$(GOTEST) $(NAME)
 	@printf "\n================="
 	@printf "\nTEST ENDS"
 	@printf "\n=================\n"
@@ -35,9 +35,9 @@ only-docker:
 
 .PHONY: test-simple
 test-simple:
-	GOPRIVATE=*.faza.io $(GOMODTIDY) && $(GOMODDOWNLOAD)
-	GOPRIVATE=*.faza.io $(GOTEST) $(NAME)
+	$(GOMODTIDY) && $(GOMODDOWNLOAD)
+	$(GOTEST) $(NAME)
 
 .PHONY: test-code
 test-code:
-	GOPRIVATE=*.faza.io $(GOTEST) $(NAME)
+	$(GOTEST) $(NAME)

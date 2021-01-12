@@ -1,4 +1,4 @@
-module gitlab.faza.io/go-framework/mongoadapter
+module github.com/farzandalaee/mongoadapter
 
 go 1.13
 
